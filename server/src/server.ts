@@ -4,9 +4,9 @@ const app = express();
 
 app.use(express.json());
 
-app.post('/users', (request, response) => {
-  console.log(request.body);
-  
+app.delete('/users/:id', (request, response) => {
+  console.log(request.params);
+
   const users = [
     { name: 'Diego', age: 25 },
     { name: 'Vini', age: 21 },
