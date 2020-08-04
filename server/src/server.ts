@@ -4,8 +4,8 @@ const app = express();
 
 app.use(express.json());
 
-app.delete('/users/:id', (request, response) => {
-  console.log(request.params);
+app.get('/users', (request, response) => {
+  console.log(request.query);
 
   const users = [
     { name: 'Diego', age: 25 },
