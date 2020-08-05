@@ -10,7 +10,9 @@ const { Navigator, Screen } = createStackNavigator();
 function AppStack() {
   return (
     <NavigationContainer>
-      <Navigator>
+      <Navigator screenOptions={{
+        headerShown: false,
+      }}>
         <Screen name="landing" component={Landing} />
       </Navigator>
     </NavigationContainer>
