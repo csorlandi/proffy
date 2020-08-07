@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Text, TextInput } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import AsyncStorage from '@react-native-community/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 
 import api from '../../services/api';
@@ -33,6 +34,10 @@ function TeacherList() {
       }
     });
   }
+
+  useFocusEffect(() => {
+    loadFavorites();
+  })
 
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);
